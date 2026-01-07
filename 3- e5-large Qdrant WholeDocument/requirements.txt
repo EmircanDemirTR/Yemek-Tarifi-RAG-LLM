@@ -1,0 +1,15 @@
+# E5-Large Embedding Model (sentence-transformers ile)
+sentence-transformers>=2.2.0
+
+# Qdrant Vector Database
+qdrant-client>=1.7.0
+
+# Data Processing
+tqdm>=4.66.0
+
+# PyTorch (CUDA için)
+torch>=2.0.0
+
+# Utilities
+rich>=13.7.0
+
