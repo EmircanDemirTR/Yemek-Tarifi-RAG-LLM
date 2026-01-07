@@ -117,9 +117,9 @@ def evaluate_llm_only(model_key: str, questions: list) -> dict:
                 hall = "H" if metrics["is_hallucination"] else ""
                 print(f"{status} Score={score:.2f} {hall} | {latency:.0f}ms")
                 
-                # Verbose: Cevabı göster
+                # Verbose: Cevabı göster (300 karakter)
                 if VERBOSE_MODE:
-                    print(f"      💬 Cevap: {prediction[:150]}{'...' if len(prediction) > 150 else ''}")
+                    print(f"      💬 Cevap: {prediction[:300]}{'...' if len(prediction) > 300 else ''}")
                 
             except Exception as e:
                 print(f"❌ {str(e)[:25]}")
@@ -193,11 +193,11 @@ def evaluate_rag(model_key: str, questions: list) -> dict:
                 recipes_found = metrics["num_recipes"]
                 print(f"{status} Score={score:.2f} {hall} | {recipes_found} tarif | {latency:.0f}ms")
                 
-                # Verbose: Cevabı ve bulunan tarifleri göster
+                # Verbose: Cevabı ve bulunan tarifleri göster (300 karakter)
                 if VERBOSE_MODE:
-                    print(f"      💬 Cevap: {prediction[:150]}{'...' if len(prediction) > 150 else ''}")
+                    print(f"      💬 Cevap: {prediction[:300]}{'...' if len(prediction) > 300 else ''}")
                     if recipes_found > 0:
-                        recipe_titles = [r.get("title", "?")[:30] for r in result.get("retrieved_recipes", [])[:3]]
+                        recipe_titles = [r.get("title", "?")[:40] for r in result.get("retrieved_recipes", [])[:3]]
                         print(f"      📚 Tarifler: {', '.join(recipe_titles)}")
                 
             except Exception as e:

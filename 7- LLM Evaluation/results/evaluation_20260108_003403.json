@@ -1,0 +1,43 @@
+{
+  "timestamp": "20260108_003403",
+  "num_questions": 2,
+  "models": [
+    "openai"
+  ],
+  "results": {
+    "openai_llm_only": {
+      "model": "OpenAI GPT-4o-mini",
+      "mode": "llm_only",
+      "aggregated": {
+        "exact_match": 0.0,
+        "precision": 0.15645161290322582,
+        "recall": 0.2439903846153846,
+        "f1": 0.18922218346703873,
+        "keyword_score": 0.4107142857142857,
+        "recipe_score": 0.55,
+        "faithfulness": 0.0,
+        "combined_score": 0.29996823459066224,
+        "hallucination_rate": 0.0,
+        "total_questions": 2,
+        "avg_latency_ms": 4034.60431098938
+      }
+    },
+    "openai_rag": {
+      "model": "OpenAI GPT-4o-mini",
+      "mode": "rag",
+      "aggregated": {
+        "exact_match": 0.0,
+        "precision": 0.10387529137529136,
+        "recall": 0.3016826923076923,
+        "f1": 0.1544871794871795,
+        "keyword_score": 0.4107142857142857,
+        "recipe_score": 0.225,
+        "faithfulness": 0.46412037037037035,
+        "combined_score": 0.3400585063085063,
+        "hallucination_rate": 0.0,
+        "total_questions": 2,
+        "avg_latency_ms": 6763.082385063171
+      }
+    }
+  }
+}
