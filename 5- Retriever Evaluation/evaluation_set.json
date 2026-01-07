@@ -1,0 +1,443 @@
+{
+  "metadata": {
+    "description": "Retriever performans değerlendirmesi için gelişmiş soru seti",
+    "total_questions": 60,
+    "created_date": "2026-01-07",
+    "domain": "Türk Mutfağı Tarifleri",
+    "difficulty_levels": ["kolay", "orta", "zor"],
+    "question_types": ["direkt", "malzeme_bazlı", "durum_bazlı", "kısıtlamalı", "karşılaştırmalı", "impossible"]
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Akşam misafir gelecek, 1 saat içinde hazırlayabileceğim etkileyici bir ana yemek önerir misin?",
+      "expected_recipes": ["Tavuk Sote", "Köfte", "Biftek", "Tavuk Şiş", "Mantarlı Tavuk"],
+      "category": "durum_bazlı",
+      "difficulty": "zor"
+    },
+    {
+      "id": 2,
+      "question": "Buzdolabında sadece yumurta, peynir ve domates var. Kahvaltıya ne yapabilirim?",
+      "expected_recipes": ["Menemen", "Omlet", "Sahanda Yumurta", "Peynirli Omlet"],
+      "category": "malzeme_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 3,
+      "question": "Çocuğum sebze yemiyor ama sebzeleri gizleyebileceğim lezzetli bir yemek tarifi lazım",
+      "expected_recipes": ["Köfte", "Börek", "Mücver", "Sebzeli Makarna", "Patates Püresi"],
+      "category": "kısıtlamalı",
+      "difficulty": "zor"
+    },
+    {
+      "id": 4,
+      "question": "Ramazan'da iftar için doyurucu ama hazırlaması kolay bir çorba",
+      "expected_recipes": ["Mercimek Çorbası", "Ezogelin Çorbası", "Tarhana Çorbası", "Şehriyeli Tavuk Çorbası"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 5,
+      "question": "Kilo vermek istiyorum, düşük kalorili ama doyurucu akşam yemeği ne yapabilirim?",
+      "expected_recipes": ["Izgara Tavuk", "Sebze Yemeği", "Salata", "Izgara Balık", "Zeytinyağlı Fasulye"],
+      "category": "kısıtlamalı",
+      "difficulty": "zor"
+    },
+    {
+      "id": 6,
+      "question": "Bayramda ikram edebileceğim geleneksel bir Türk tatlısı yapmak istiyorum",
+      "expected_recipes": ["Baklava", "Şekerpare", "Revani", "Kadayıf", "Lokma"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 7,
+      "question": "Fırınım bozuk, ocakta yapabileceğim pratik bir et yemeği",
+      "expected_recipes": ["Kavurma", "Sote", "Köfte", "Tas Kebabı", "Et Haşlama"],
+      "category": "kısıtlamalı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 8,
+      "question": "Vejetaryen bir arkadaşım var, etsiz ama protein açısından zengin ne pişirebilirim?",
+      "expected_recipes": ["Mercimek Köftesi", "Kuru Fasulye", "Nohut Yemeği", "Kısır", "Falafel"],
+      "category": "kısıtlamalı",
+      "difficulty": "zor"
+    },
+    {
+      "id": 9,
+      "question": "Soğuk kış akşamı için içimi ısıtacak geleneksel bir yemek",
+      "expected_recipes": ["Kuru Fasulye", "Mercimek Çorbası", "Lahana Sarması", "Kelle Paça", "Tarhana Çorbası"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 10,
+      "question": "İş yerinde öğle yemeği için götürebileceğim, soğuk da yenebilecek bir şey",
+      "expected_recipes": ["Kısır", "Makarna Salatası", "Börek", "Poğaça", "Sandviç"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 11,
+      "question": "Annemin yaptığı gibi eski usul, uzun uzun pişen bir ev yemeği tarifi",
+      "expected_recipes": ["Karnıyarık", "İmam Bayıldı", "Etli Nohut", "Kuru Fasulye", "Türlü"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 12,
+      "question": "Glutensiz besleniyorum, hamur işi olmadan yapabileceğim bir kahvaltılık",
+      "expected_recipes": ["Menemen", "Sucuklu Yumurta", "Omlet", "Peynir Tabağı", "Çılbır"],
+      "category": "kısıtlamalı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 13,
+      "question": "3 yaşındaki çocuğuma ilk kez köfte yapmak istiyorum, en basit tarif hangisi?",
+      "expected_recipes": ["Köfte", "Fırında Köfte", "İzgara Köfte", "Sulu Köfte"],
+      "category": "durum_bazlı",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 14,
+      "question": "Yazın sıcağında serinletici, hafif bir ana yemek ne olabilir?",
+      "expected_recipes": ["Zeytinyağlı Dolma", "Cacık", "Patlıcan Salatası", "Yaprak Sarma", "Kısır"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 15,
+      "question": "Patlıcan sevmiyorum ama kayınvalidem musakka yapıyor, alternatif ne önerebilirsin?",
+      "expected_recipes": ["Patates Musakka", "Kabak Musakka", "Karnabahar Graten", "Fırın Makarna"],
+      "category": "kısıtlamalı",
+      "difficulty": "zor"
+    },
+    {
+      "id": 16,
+      "question": "Romantik bir akşam yemeği için özel görünümlü ama yapması zor olmayan bir tarif",
+      "expected_recipes": ["Biftek", "Kremalı Tavuk", "Somon", "Mantarlı Risotto", "Fırında Levrek"],
+      "category": "durum_bazlı",
+      "difficulty": "zor"
+    },
+    {
+      "id": 17,
+      "question": "Çok acıktım ama markete gidemiyorum, sadece makarna ve konserve domates var",
+      "expected_recipes": ["Makarna", "Domates Soslu Makarna", "Arrabbiata", "Pomodoro"],
+      "category": "malzeme_bazlı",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 18,
+      "question": "Dedemin diyabet hastası, şekersiz ama lezzetli bir tatlı yapabilir miyim?",
+      "expected_recipes": ["Meyveli Yoğurt", "Diyabetik Tatlı", "Şekersiz Kurabiye", "Keçiboynuzlu Tatlı"],
+      "category": "kısıtlamalı",
+      "difficulty": "zor"
+    },
+    {
+      "id": 19,
+      "question": "Hafta sonu kahvaltısı için evde pide ya da simit yapabilir miyim?",
+      "expected_recipes": ["Ev Simidi", "Ramazan Pidesi", "Pide", "Bazlama", "Poğaça"],
+      "category": "direkt",
+      "difficulty": "orta"
+    },
+    {
+      "id": 20,
+      "question": "Tavuk göğsünü değişik bir şekilde pişirmek istiyorum, hep aynı şeyleri yapıyorum",
+      "expected_recipes": ["Tavuk Şiş", "Tavuk Sote", "Kremalı Tavuk", "Tandır Tavuk", "Tavuk Sarma"],
+      "category": "malzeme_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 21,
+      "question": "Dondurucudan çıkardığım kıymayı en hızlı ne yapabilirim akşam yemeğine?",
+      "expected_recipes": ["Köfte", "Kıymalı Makarna", "Lahmacun", "Kıymalı Pide", "Kıymalı Börek"],
+      "category": "malzeme_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 22,
+      "question": "Cumartesi sabahı geç kalkmış kahvaltı için enfes bir brunch menüsü",
+      "expected_recipes": ["Menemen", "Sucuklu Yumurta", "Omlet", "Gözleme", "French Toast"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 23,
+      "question": "Aşırı yorgunum, 15 dakikada hazır olacak besleyici bir şey",
+      "expected_recipes": ["Omlet", "Makarna", "Tost", "Yumurtalı Ekmek", "Salata"],
+      "category": "durum_bazlı",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 24,
+      "question": "Bebek 6 aylık oldu, ilk ek gıda için evde ne hazırlayabilirim?",
+      "expected_recipes": ["Sebze Püresi", "Meyve Püresi", "Patates Püresi", "Havuç Püresi"],
+      "category": "kısıtlamalı",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 25,
+      "question": "Kapıda beklemeyen, önceden hazırlanabilecek bir parti yemeği",
+      "expected_recipes": ["Kısır", "Börek", "Poğaça", "Zeytinyağlı", "Pilaki"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 26,
+      "question": "Ege mutfağından zeytinyağlı bir ot yemeği yapmak istiyorum",
+      "expected_recipes": ["Zeytinyağlı Pırasa", "Zeytinyağlı Semizotu", "Zeytinyağlı Ispanak", "Zeytinyağlı Enginar"],
+      "category": "direkt",
+      "difficulty": "orta"
+    },
+    {
+      "id": 27,
+      "question": "Antep mutfağından acılı ve lezzetli bir kebap tarifi",
+      "expected_recipes": ["Adana Kebap", "Lahmacun", "Ali Nazik", "Beyran", "Yuvalama"],
+      "category": "direkt",
+      "difficulty": "zor"
+    },
+    {
+      "id": 28,
+      "question": "Çocuğumun doğum günü için evde pasta yapmak istiyorum, kremalı olsun",
+      "expected_recipes": ["Yaş Pasta", "Çikolatalı Pasta", "Muzlu Pasta", "Doğum Günü Pastası"],
+      "category": "durum_bazlı",
+      "difficulty": "zor"
+    },
+    {
+      "id": 29,
+      "question": "Karnabaharı hiç sevmem ama sağlıklı olduğu için denemek istiyorum",
+      "expected_recipes": ["Karnabahar Kızartması", "Karnabahar Graten", "Karnabahar Çorbası", "Karnabahar Mücveri"],
+      "category": "malzeme_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 30,
+      "question": "Yurt dışında yaşıyorum, özlediğim Türk kahvaltısı için sucuk yok, alternatif?",
+      "expected_recipes": ["Pastırmalı Yumurta", "Kavurmalı Yumurta", "Menemen", "Sahanda Yumurta"],
+      "category": "kısıtlamalı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 31,
+      "question": "Mide rahatsızlığım var, hafif ve sindirimi kolay bir akşam yemeği",
+      "expected_recipes": ["Pirinç Çorbası", "Tavuk Suyu Çorbası", "Haşlama", "Zeytinyağlı Taze Fasulye"],
+      "category": "kısıtlamalı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 32,
+      "question": "Rus salatasını çok severim, evde nasıl yaparım bilmiyorum",
+      "expected_recipes": ["Rus Salatası", "Amerikan Salatası", "Patates Salatası"],
+      "category": "direkt",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 33,
+      "question": "Kalan pilavı değerlendirebileceğim farklı bir tarif var mı?",
+      "expected_recipes": ["Pilavlı Köfte", "Pilav Üstü Döner", "Pilav Üstü Kuru", "Arancini", "Pilav Salatası"],
+      "category": "malzeme_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 34,
+      "question": "Pikniğe gidiyoruz, taşıması kolay ve bozulmayacak yemekler",
+      "expected_recipes": ["Poğaça", "Börek", "Kısır", "Sandviç", "Simit"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 35,
+      "question": "Şerbetli tatlı yapmaktan korkuyorum, ilk kez deneyeceğim kolay bir tarif",
+      "expected_recipes": ["Revani", "Şambali", "Kemalpaşa", "Şekerpare"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 36,
+      "question": "Tavada balık kızartmak istiyorum ama hep dağılıyor, püf noktası nedir?",
+      "expected_recipes": ["Tavada Balık", "Balık Kızartma", "Hamsi Tava", "Çipura Tava"],
+      "category": "direkt",
+      "difficulty": "orta"
+    },
+    {
+      "id": 37,
+      "question": "Laktozsuz besleniyorum, süt ve krema olmadan yapabileceğim bir makarna sosu",
+      "expected_recipes": ["Domates Soslu Makarna", "Pesto Makarna", "Zeytinyağlı Makarna", "Aglio e Olio"],
+      "category": "kısıtlamalı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 38,
+      "question": "Kış için turşu kurmak istiyorum, en klasik tarif hangisi?",
+      "expected_recipes": ["Lahana Turşusu", "Karışık Turşu", "Kornişon Turşusu", "Biber Turşusu"],
+      "category": "direkt",
+      "difficulty": "orta"
+    },
+    {
+      "id": 39,
+      "question": "Ev yapımı lahmacun denemek istiyorum ama fırınım küçük",
+      "expected_recipes": ["Lahmacun", "Tavada Lahmacun", "Mini Lahmacun", "Lahmacun Tarifi"],
+      "category": "direkt",
+      "difficulty": "zor"
+    },
+    {
+      "id": 40,
+      "question": "Kuzu eti aldım ama ne yapacağımı bilmiyorum, önerin?",
+      "expected_recipes": ["Kuzu Tandır", "Kuzu İncik", "Kuzu Haşlama", "Kuzu Kavurma", "Fırında Kuzu"],
+      "category": "malzeme_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 41,
+      "question": "Anneannemin yaptığı gibi tel tel ayrılan pilav nasıl yapılır?",
+      "expected_recipes": ["Pirinç Pilavı", "Tereyağlı Pilav", "Pilav", "Nohutlu Pilav"],
+      "category": "direkt",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 42,
+      "question": "Ev yapımı yoğurt mayalayacağım, ilk kez deneyeceğim",
+      "expected_recipes": ["Ev Yoğurdu", "Yoğurt Yapımı", "Süzme Yoğurt"],
+      "category": "direkt",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 43,
+      "question": "Karadeniz mutfağından mısır unu ile yapılan bir şey",
+      "expected_recipes": ["Mısır Ekmeği", "Kuymak", "Muhlama", "Hamsiköy Sütlacı"],
+      "category": "direkt",
+      "difficulty": "orta"
+    },
+    {
+      "id": 44,
+      "question": "Osmanlı saray mutfağından gösterişli bir yemek yapmak istiyorum",
+      "expected_recipes": ["Hünkar Beğendi", "Sultan Kebabı", "Saray Lokumu", "İmam Bayıldı", "Padişah Pilavı"],
+      "category": "direkt",
+      "difficulty": "zor"
+    },
+    {
+      "id": 45,
+      "question": "Protein tozu falan olmadan, spor sonrası için doğal proteinli atıştırmalık",
+      "expected_recipes": ["Yumurta", "Lor Peyniri", "Yoğurt", "Fıstık Ezmesi", "Humus"],
+      "category": "kısıtlamalı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 46,
+      "question": "Kaşarlı, kıymalı, nefis bir pide yapmak istiyorum evde",
+      "expected_recipes": ["Kıymalı Pide", "Kaşarlı Pide", "Karışık Pide", "Kuşbaşılı Pide"],
+      "category": "direkt",
+      "difficulty": "orta"
+    },
+    {
+      "id": 47,
+      "question": "Kabak dolması içi için en lezzetli pirinçli harç tarifi",
+      "expected_recipes": ["Kabak Dolması", "Dolma", "Zeytinyağlı Kabak Dolması", "Etli Kabak Dolması"],
+      "category": "direkt",
+      "difficulty": "orta"
+    },
+    {
+      "id": 48,
+      "question": "Sıcak yaz günü için evde limonata veya soğuk içecek tarifleri",
+      "expected_recipes": ["Limonata", "Ayran", "Şalgam", "Boza", "Şerbet"],
+      "category": "direkt",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 49,
+      "question": "Gece yarısı canım çok tatlı çekti, buzdolabındakilerle hızlı bir tatlı",
+      "expected_recipes": ["Muhallebi", "Sütlaç", "Puding", "Magnolia", "Supangle"],
+      "category": "durum_bazlı",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 50,
+      "question": "Hatay usulü künefe yapmak istiyorum ama tel kadayıf bulamıyorum",
+      "expected_recipes": ["Künefe", "Ekmek Kadayıfı", "Kadayıf Tatlısı", "Kadayıf Dolması"],
+      "category": "kısıtlamalı",
+      "difficulty": "zor"
+    },
+    
+    {
+      "id": 51,
+      "question": "Dondurmalı karnıyarık tarifi var mı?",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Var olmayan saçma kombinasyon - sistem bulunamadı demeli"
+    },
+    {
+      "id": 52,
+      "question": "Çikolatalı mercimek çorbası nasıl yapılır?",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Var olmayan saçma kombinasyon"
+    },
+    {
+      "id": 53,
+      "question": "Wasabi soslu mantı tarifi istiyorum",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Türk mutfağında olmayan fusion"
+    },
+    {
+      "id": 54,
+      "question": "Mayonezli baklava nasıl yapılır?",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Absürt kombinasyon"
+    },
+    {
+      "id": 55,
+      "question": "Lahmacunlu cheesecake tarifi",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Mantıksız tatlı-tuzlu karışımı"
+    },
+    {
+      "id": 56,
+      "question": "Ketçaplı sütlaç yapımı",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "İğrenç kombinasyon"
+    },
+    {
+      "id": 57,
+      "question": "Turşulu tiramisu nasıl yapılır?",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Var olmayan tatlı"
+    },
+    {
+      "id": 58,
+      "question": "Sushi tarifi Türk mutfağından",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Japon yemeği - veritabanında yok"
+    },
+    {
+      "id": 59,
+      "question": "Coca-cola ile yapılan dolma tarifi",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Absürt malzeme kombinasyonu"
+    },
+    {
+      "id": 60,
+      "question": "Dondurma soslu iskender kebap",
+      "expected_recipes": [],
+      "category": "impossible",
+      "difficulty": "zor",
+      "note": "Var olmayan kombinasyon"
+    }
+  ]
+}
