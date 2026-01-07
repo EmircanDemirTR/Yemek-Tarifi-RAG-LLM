@@ -49,6 +49,9 @@ def init_retriever_once():
         except Exception as e:
             print(f"⚠️ Retriever başlatılamadı: {e}\n")
 
+# Verbose mod - cevapları detaylı göster (default: açık)
+VERBOSE_MODE = True
+
 # Modeller - PDF'e göre: 1 API + 4 lokal (toplam 5)
 MODELS = {
     "openai": {"name": "OpenAI GPT-4o-mini", "provider": "openai", "model": None},
@@ -113,6 +116,10 @@ def evaluate_llm_only(model_key: str, questions: list) -> dict:
                 status = "✓" if score > 0.2 else "○"
                 hall = "H" if metrics["is_hallucination"] else ""
                 print(f"{status} Score={score:.2f} {hall} | {latency:.0f}ms")
+                
+                # Verbose: Cevabı göster
+                if VERBOSE_MODE:
+                    print(f"      💬 Cevap: {prediction[:150]}{'...' if len(prediction) > 150 else ''}")
                 
             except Exception as e:
                 print(f"❌ {str(e)[:25]}")
@@ -183,7 +190,15 @@ def evaluate_rag(model_key: str, questions: list) -> dict:
                 score = metrics["combined_score"]
                 status = "✓" if score > 0.2 else "○"
                 hall = "H" if metrics["is_hallucination"] else ""
-                print(f"{status} Score={score:.2f} {hall} | {latency:.0f}ms")
+                recipes_found = metrics["num_recipes"]
+                print(f"{status} Score={score:.2f} {hall} | {recipes_found} tarif | {latency:.0f}ms")
+                
+                # Verbose: Cevabı ve bulunan tarifleri göster
+                if VERBOSE_MODE:
+                    print(f"      💬 Cevap: {prediction[:150]}{'...' if len(prediction) > 150 else ''}")
+                    if recipes_found > 0:
+                        recipe_titles = [r.get("title", "?")[:30] for r in result.get("retrieved_recipes", [])[:3]]
+                        print(f"      📚 Tarifler: {', '.join(recipe_titles)}")
                 
             except Exception as e:
                 print(f"❌ {str(e)[:25]}")
@@ -309,6 +324,15 @@ if __name__ == "__main__":
                        help="Test edilecek modeller")
     parser.add_argument("--questions", type=int, default=10,
                        help="Soru sayısı")
+    parser.add_argument("--no-verbose", "-q", action="store_true",
+                       help="Cevapları gizle (sessiz mod)")
     args = parser.parse_args()
+    
+    # Verbose mod (default: açık, --no-verbose ile kapatılabilir)
+    if args.no_verbose:
+        globals()['VERBOSE_MODE'] = False
+        print("🔇 Sessiz mod - cevaplar gizlenecek\n")
+    else:
+        print("📝 Verbose mod açık - cevaplar detaylı gösterilecek\n")
     
     run_full_evaluation(args.models, args.questions)

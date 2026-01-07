@@ -4,6 +4,15 @@ RAG Pipeline Konfigürasyonu
 import os
 from pathlib import Path
 
+# .env dosyasından API key'leri yükle
+try:
+    from dotenv import load_dotenv
+    # Proje kök dizinindeki .env dosyasını yükle (override=True cache'i geçersiz kılar)
+    env_path = Path(__file__).parent.parent / ".env"
+    load_dotenv(env_path, override=True)
+except ImportError:
+    pass  # python-dotenv yüklü değilse devam et
+
 # Dosya yolları
 BASE_DIR = Path(__file__).parent
 PROJECT_DIR = BASE_DIR.parent
