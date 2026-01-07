@@ -52,4 +52,3 @@ SIMILARITY_THRESHOLD = 0.3
 # ============================================================
 SAVE_DETAILED_RESULTS = True
 GENERATE_CHARTS = True
-

@@ -1,0 +1,113 @@
+{
+  "timestamp": "20260108_000540",
+  "num_questions": 10,
+  "models": [
+    "openai",
+    "qwen2",
+    "llama3.2"
+  ],
+  "results": {
+    "openai_llm_only": {
+      "model": "OpenAI GPT-4o-mini",
+      "mode": "llm_only",
+      "aggregated": {
+        "exact_match": 0.0,
+        "precision": 0.16653681461952136,
+        "recall": 0.28806733038518356,
+        "f1": 0.20954620247835223,
+        "keyword_score": 0.4793650793650793,
+        "recipe_score": 0.6166666666666667,
+        "faithfulness": 0.0,
+        "combined_score": 0.34445564092171577,
+        "hallucination_rate": 0.0,
+        "total_questions": 10,
+        "avg_latency_ms": 4364.504861831665
+      }
+    },
+    "openai_rag": {
+      "model": "OpenAI GPT-4o-mini",
+      "mode": "rag",
+      "aggregated": {
+        "exact_match": 0.0,
+        "precision": 0.09553437898860266,
+        "recall": 0.2714209033869768,
+        "f1": 0.1403362061779359,
+        "keyword_score": 0.4390873015873016,
+        "recipe_score": 0.485,
+        "faithfulness": 0.47351556336562084,
+        "combined_score": 0.4298716539258384,
+        "hallucination_rate": 0.0,
+        "total_questions": 10,
+        "avg_latency_ms": 7694.392037391663
+      }
+    },
+    "qwen2_llm_only": {
+      "model": "Ollama Qwen2 1.5B",
+      "mode": "llm_only",
+      "aggregated": {
+        "exact_match": 0.0,
+        "precision": 0.11967331501827745,
+        "recall": 0.09823279087739599,
+        "f1": 0.10288335154351691,
+        "keyword_score": 0.20714285714285713,
+        "recipe_score": 0.305,
+        "faithfulness": 0.0,
+        "combined_score": 0.1568998967960172,
+        "hallucination_rate": 0.5,
+        "total_questions": 10,
+        "avg_latency_ms": 14932.595181465149
+      }
+    },
+    "qwen2_rag": {
+      "model": "Ollama Qwen2 1.5B",
+      "mode": "rag",
+      "aggregated": {
+        "exact_match": 0.0,
+        "precision": 0.09235015226149546,
+        "recall": 0.20025811165619287,
+        "f1": 0.12315917730391024,
+        "keyword_score": 0.346031746031746,
+        "recipe_score": 0.465,
+        "faithfulness": 0.3775977302741279,
+        "combined_score": 0.36574816219791506,
+        "hallucination_rate": 0.0,
+        "total_questions": 10,
+        "avg_latency_ms": 33700.517988204956
+      }
+    },
+    "llama3.2_llm_only": {
+      "model": "Ollama Llama 3.2 3B",
+      "mode": "llm_only",
+      "aggregated": {
+        "exact_match": 0.0,
+        "precision": 0.11803094755541718,
+        "recall": 0.20015039830807352,
+        "f1": 0.14698704354714762,
+        "keyword_score": 0.30436507936507934,
+        "recipe_score": 0.47000000000000003,
+        "faithfulness": 0.0,
+        "combined_score": 0.22567606145611346,
+        "hallucination_rate": 0.2,
+        "total_questions": 10,
+        "avg_latency_ms": 38507.220578193665
+      }
+    },
+    "llama3.2_rag": {
+      "model": "Ollama Llama 3.2 3B",
+      "mode": "rag",
+      "aggregated": {
+        "exact_match": 0.0,
+        "precision": 0.08604315434611629,
+        "recall": 0.2291371164111709,
+        "f1": 0.12186406189845034,
+        "keyword_score": 0.4404761904761905,
+        "recipe_score": 0.445,
+        "faithfulness": 0.36659060603836063,
+        "combined_score": 0.39519500358799337,
+        "hallucination_rate": 0.1,
+        "total_questions": 10,
+        "avg_latency_ms": 55242.760181427
+      }
+    }
+  }
+}

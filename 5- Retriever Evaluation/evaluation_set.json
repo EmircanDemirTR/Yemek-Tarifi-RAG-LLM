@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Retriever performans değerlendirmesi için gelişmiş soru seti",
+    "description": "Retriever ve LLM performans değerlendirmesi için soru seti",
     "total_questions": 60,
     "created_date": "2026-01-07",
     "domain": "Türk Mutfağı Tarifleri",
@@ -12,6 +12,8 @@
       "id": 1,
       "question": "Akşam misafir gelecek, 1 saat içinde hazırlayabileceğim etkileyici bir ana yemek önerir misin?",
       "expected_recipes": ["Tavuk Sote", "Köfte", "Biftek", "Tavuk Şiş", "Mantarlı Tavuk"],
+      "gold_answer": "Misafir için hızlı ve etkileyici yemekler: Tavuk sote 30 dakikada hazırlanır, tavuk göğsü küp doğranır, soğan ve biberle kavrulur. Köfte de pratiktir, kıyma yoğrulur, şekil verilip kızartılır. Tavuk şiş marine edilip fırında veya mangalda pişirilir.",
+      "keywords": ["tavuk", "sote", "köfte", "şiş", "hızlı", "pratik", "misafir", "biftek"],
       "category": "durum_bazlı",
       "difficulty": "zor"
     },
@@ -19,6 +21,8 @@
       "id": 2,
       "question": "Buzdolabında sadece yumurta, peynir ve domates var. Kahvaltıya ne yapabilirim?",
       "expected_recipes": ["Menemen", "Omlet", "Sahanda Yumurta", "Peynirli Omlet"],
+      "gold_answer": "Bu malzemelerle menemen yapabilirsiniz. Doğranmış domates tavada pişirilir, üzerine yumurta kırılır, peynir eklenir. Alternatif olarak peynirli omlet veya sahanda yumurta da yapılabilir. Menemen için domates, yumurta, tuz ve karabiber yeterlidir.",
+      "keywords": ["menemen", "omlet", "yumurta", "peynir", "domates", "kahvaltı", "sahanda"],
       "category": "malzeme_bazlı",
       "difficulty": "orta"
     },
@@ -26,343 +30,440 @@
       "id": 3,
       "question": "Çocuğum sebze yemiyor ama sebzeleri gizleyebileceğim lezzetli bir yemek tarifi lazım",
       "expected_recipes": ["Köfte", "Börek", "Mücver", "Sebzeli Makarna", "Patates Püresi"],
+      "gold_answer": "Çocuklar için sebze gizleme yöntemleri: Köfte içine rendelenmiş havuç, kabak eklenebilir. Mücver kabak rendesi ile yapılır, çocuklar severek yer. Börek içine ıspanak veya patates püresi konabilir. Makarna sosuna domates ve havuç püresi karıştırılabilir.",
+      "keywords": ["köfte", "mücver", "börek", "makarna", "sebze", "çocuk", "havuç", "kabak", "ıspanak"],
       "category": "kısıtlamalı",
       "difficulty": "zor"
     },
     {
       "id": 4,
-      "question": "Ramazan'da iftar için doyurucu ama hazırlaması kolay bir çorba",
-      "expected_recipes": ["Mercimek Çorbası", "Ezogelin Çorbası", "Tarhana Çorbası", "Şehriyeli Tavuk Çorbası"],
-      "category": "durum_bazlı",
-      "difficulty": "orta"
+      "question": "Mercimek çorbası nasıl yapılır?",
+      "expected_recipes": ["Mercimek Çorbası", "Kırmızı Mercimek Çorbası", "Ezogelin Çorbası"],
+      "gold_answer": "Mercimek çorbası tarifi: 1 su bardağı kırmızı mercimek yıkanır. Soğan, havuç ve patates doğranır. Tümü tencereye alınıp su eklenir. Yumuşayana kadar pişirilir, blenderdan geçirilir. Tuz, karabiber, kimyon eklenir. Tereyağında kızdırılmış kırmızı biber ile servis edilir.",
+      "keywords": ["mercimek", "çorba", "kırmızı mercimek", "havuç", "soğan", "blender", "kimyon", "tereyağı"],
+      "category": "direkt",
+      "difficulty": "kolay"
     },
     {
       "id": 5,
-      "question": "Kilo vermek istiyorum, düşük kalorili ama doyurucu akşam yemeği ne yapabilirim?",
-      "expected_recipes": ["Izgara Tavuk", "Sebze Yemeği", "Salata", "Izgara Balık", "Zeytinyağlı Fasulye"],
-      "category": "kısıtlamalı",
-      "difficulty": "zor"
+      "question": "Karnıyarık tarifi ver",
+      "expected_recipes": ["Karnıyarık", "Patlıcan Karnıyarık"],
+      "gold_answer": "Karnıyarık tarifi: Patlıcanlar alacalı soyulur ve kızartılır. Kıymalı harç için soğan kavrulur, kıyma eklenir, domates ve biberle pişirilir. Patlıcanlar ortadan yarılır, harç yerleştirilir. Fırın kabına dizilir, domates sosu eklenir, 180 derecede 30 dakika fırınlanır.",
+      "keywords": ["karnıyarık", "patlıcan", "kıyma", "fırın", "domates", "soğan", "biber", "harç"],
+      "category": "direkt",
+      "difficulty": "kolay"
     },
     {
       "id": 6,
-      "question": "Bayramda ikram edebileceğim geleneksel bir Türk tatlısı yapmak istiyorum",
-      "expected_recipes": ["Baklava", "Şekerpare", "Revani", "Kadayıf", "Lokma"],
-      "category": "durum_bazlı",
+      "question": "Tavuk göğsü var ama sıkıcı olmayan bir şey yapmak istiyorum",
+      "expected_recipes": ["Tavuk Şiş", "Tavuk Sote", "Fırında Tavuk", "Tavuk Tandır", "Çerkez Tavuğu"],
+      "gold_answer": "Tavuk göğsü ile lezzetli tarifler: Tavuk şiş için küp doğrayıp yoğurt, zeytinyağı ve baharatla marine edin, şişe dizin. Tavuk sote için soğan ve biberle kavurun. Fırında tavuk için baharatlı sos hazırlayıp üzerine dökün. Çerkez tavuğu için haşlayıp cevizli sos ile servis edin.",
+      "keywords": ["tavuk", "şiş", "sote", "fırında", "çerkez", "marine", "baharat", "göğüs"],
+      "category": "kısıtlamalı",
       "difficulty": "orta"
     },
     {
       "id": 7,
-      "question": "Fırınım bozuk, ocakta yapabileceğim pratik bir et yemeği",
-      "expected_recipes": ["Kavurma", "Sote", "Köfte", "Tas Kebabı", "Et Haşlama"],
-      "category": "kısıtlamalı",
+      "question": "Spor sonrası protein ağırlıklı hafif bir şey",
+      "expected_recipes": ["Izgara Tavuk", "Mercimek Çorbası", "Yumurta", "Ton Balıklı Salata"],
+      "gold_answer": "Spor sonrası protein kaynakları: Izgara tavuk göğsü en iyi seçenektir, yağsız ve protein deposudur. Mercimek çorbası bitkisel protein sağlar. Haşlanmış yumurta pratik ve doyurucudur. Ton balıklı salata hem protein hem vitamin içerir.",
+      "keywords": ["protein", "tavuk", "ızgara", "mercimek", "yumurta", "ton balığı", "salata", "spor", "hafif"],
+      "category": "durum_bazlı",
       "difficulty": "orta"
     },
     {
       "id": 8,
-      "question": "Vejetaryen bir arkadaşım var, etsiz ama protein açısından zengin ne pişirebilirim?",
-      "expected_recipes": ["Mercimek Köftesi", "Kuru Fasulye", "Nohut Yemeği", "Kısır", "Falafel"],
-      "category": "kısıtlamalı",
-      "difficulty": "zor"
+      "question": "Baklava nasıl yapılır?",
+      "expected_recipes": ["Baklava", "Fıstıklı Baklava", "Cevizli Baklava"],
+      "gold_answer": "Baklava tarifi: İnce yufkalar açılır veya hazır yufka kullanılır. Her yufka arasına tereyağı sürülür. Ortaya ceviz veya fıstık içi serilir. Baklava şeklinde kesilir. 170 derecede altın rengi olana kadar pişirilir. Kaynatılmış şeker şerbeti üzerine dökülür.",
+      "keywords": ["baklava", "yufka", "ceviz", "fıstık", "şerbet", "tereyağı", "fırın", "tatlı"],
+      "category": "direkt",
+      "difficulty": "kolay"
     },
     {
       "id": 9,
-      "question": "Soğuk kış akşamı için içimi ısıtacak geleneksel bir yemek",
-      "expected_recipes": ["Kuru Fasulye", "Mercimek Çorbası", "Lahana Sarması", "Kelle Paça", "Tarhana Çorbası"],
-      "category": "durum_bazlı",
-      "difficulty": "orta"
+      "question": "Dedemin çok sevdiği eski usul tatlılar nelerdir?",
+      "expected_recipes": ["Sütlaç", "Keşkül", "Kazandibi", "Tavuk Göğsü Tatlısı", "Aşure"],
+      "gold_answer": "Geleneksel Türk tatlıları: Sütlaç pirinç, süt ve şekerle yapılır, fırında üstü kızartılır. Kazandibi karamelize edilmiş sütlü tatlıdır. Keşkül badem ezmeli muhallebidir. Tavuk göğsü tatlısı gerçek tavuk ile yapılır. Aşure tahıl ve kuru meyvelerle hazırlanır.",
+      "keywords": ["sütlaç", "kazandibi", "keşkül", "tavuk göğsü", "aşure", "geleneksel", "eski", "tatlı", "muhallebi"],
+      "category": "karşılaştırmalı",
+      "difficulty": "zor"
     },
     {
       "id": 10,
-      "question": "İş yerinde öğle yemeği için götürebileceğim, soğuk da yenebilecek bir şey",
-      "expected_recipes": ["Kısır", "Makarna Salatası", "Börek", "Poğaça", "Sandviç"],
+      "question": "Romantik bir akşam yemeği için etkileyici ana yemek",
+      "expected_recipes": ["Biftek", "Somon", "Kuzu Pirzola", "Fırında Levrek"],
+      "gold_answer": "Romantik akşam yemeği için öneriler: Biftek tereyağı ve sarımsakla sote edilir, yanında patates püresi servis edilir. Somon fırında limon ve dereotu ile pişirilir. Kuzu pirzola biberiye ile marine edilip ızgarada yapılır. Levrek tuz kabuğunda fırınlanabilir.",
+      "keywords": ["biftek", "somon", "pirzola", "levrek", "romantik", "akşam", "özel", "et", "balık"],
       "category": "durum_bazlı",
-      "difficulty": "orta"
+      "difficulty": "zor"
     },
     {
       "id": 11,
-      "question": "Annemin yaptığı gibi eski usul, uzun uzun pişen bir ev yemeği tarifi",
-      "expected_recipes": ["Karnıyarık", "İmam Bayıldı", "Etli Nohut", "Kuru Fasulye", "Türlü"],
-      "category": "durum_bazlı",
-      "difficulty": "orta"
+      "question": "İmam bayıldı tarifi",
+      "expected_recipes": ["İmam Bayıldı", "Patlıcan İmam Bayıldı"],
+      "gold_answer": "İmam bayıldı tarifi: Patlıcanlar alacalı soyulur, boyuna yarılır. Bol yağda kızartılır veya fırınlanır. Soğan, sarımsak ve domates kavrulur. Patlıcanların içine bu harç konur. Zeytinyağı gezdirilir, sıcak su eklenir, kısık ateşte pişirilir. Soğuk servis edilir.",
+      "keywords": ["imam bayıldı", "patlıcan", "soğan", "domates", "zeytinyağlı", "sarımsak", "soğuk"],
+      "category": "direkt",
+      "difficulty": "kolay"
     },
     {
       "id": 12,
-      "question": "Glutensiz besleniyorum, hamur işi olmadan yapabileceğim bir kahvaltılık",
-      "expected_recipes": ["Menemen", "Sucuklu Yumurta", "Omlet", "Peynir Tabağı", "Çılbır"],
-      "category": "kısıtlamalı",
+      "question": "Pilav çeşitleri önerir misin?",
+      "expected_recipes": ["Pirinç Pilavı", "Bulgur Pilavı", "İç Pilav", "Nohutlu Pilav", "Şehriyeli Pilav"],
+      "gold_answer": "Pilav çeşitleri: Tereyağlı pirinç pilavı en klasik olanıdır. Şehriyeli pilav şehriye kavrılıp pirinçle pişirilir. Bulgur pilavı domatesli veya sade yapılır. İç pilav kuş üzümü, fıstık ve baharatla zenginleştirilir. Nohutlu pilav doyurucu bir seçenektir.",
+      "keywords": ["pilav", "pirinç", "bulgur", "şehriye", "nohut", "iç pilav", "tereyağı"],
+      "category": "karşılaştırmalı",
       "difficulty": "orta"
     },
     {
       "id": 13,
-      "question": "3 yaşındaki çocuğuma ilk kez köfte yapmak istiyorum, en basit tarif hangisi?",
-      "expected_recipes": ["Köfte", "Fırında Köfte", "İzgara Köfte", "Sulu Köfte"],
-      "category": "durum_bazlı",
-      "difficulty": "kolay"
-    },
-    {
-      "id": 14,
-      "question": "Yazın sıcağında serinletici, hafif bir ana yemek ne olabilir?",
-      "expected_recipes": ["Zeytinyağlı Dolma", "Cacık", "Patlıcan Salatası", "Yaprak Sarma", "Kısır"],
-      "category": "durum_bazlı",
+      "question": "Zeytinyağlı yemekler hangileri?",
+      "expected_recipes": ["Zeytinyağlı Fasulye", "Zeytinyağlı Yaprak Sarma", "Zeytinyağlı Enginar", "İmam Bayıldı"],
+      "gold_answer": "Zeytinyağlı yemekler: Zeytinyağlı fasulye soğan, domates ve zeytinyağı ile pişirilir, soğuk servis edilir. Yaprak sarma iç pilav ile doldurulur. Enginar zeytinyağında limonlu pişirilir. İmam bayıldı klasik zeytinyağlı patlıcan yemeğidir. Hepsi soğuk yenir.",
+      "keywords": ["zeytinyağlı", "fasulye", "yaprak sarma", "enginar", "imam bayıldı", "soğuk", "sebze"],
+      "category": "karşılaştırmalı",
       "difficulty": "orta"
     },
     {
-      "id": 15,
-      "question": "Patlıcan sevmiyorum ama kayınvalidem musakka yapıyor, alternatif ne önerebilirsin?",
-      "expected_recipes": ["Patates Musakka", "Kabak Musakka", "Karnabahar Graten", "Fırın Makarna"],
-      "category": "kısıtlamalı",
-      "difficulty": "zor"
-    },
-    {
-      "id": 16,
-      "question": "Romantik bir akşam yemeği için özel görünümlü ama yapması zor olmayan bir tarif",
-      "expected_recipes": ["Biftek", "Kremalı Tavuk", "Somon", "Mantarlı Risotto", "Fırında Levrek"],
-      "category": "durum_bazlı",
-      "difficulty": "zor"
-    },
-    {
-      "id": 17,
-      "question": "Çok acıktım ama markete gidemiyorum, sadece makarna ve konserve domates var",
-      "expected_recipes": ["Makarna", "Domates Soslu Makarna", "Arrabbiata", "Pomodoro"],
-      "category": "malzeme_bazlı",
-      "difficulty": "kolay"
-    },
-    {
-      "id": 18,
-      "question": "Dedemin diyabet hastası, şekersiz ama lezzetli bir tatlı yapabilir miyim?",
-      "expected_recipes": ["Meyveli Yoğurt", "Diyabetik Tatlı", "Şekersiz Kurabiye", "Keçiboynuzlu Tatlı"],
-      "category": "kısıtlamalı",
-      "difficulty": "zor"
-    },
-    {
-      "id": 19,
-      "question": "Hafta sonu kahvaltısı için evde pide ya da simit yapabilir miyim?",
-      "expected_recipes": ["Ev Simidi", "Ramazan Pidesi", "Pide", "Bazlama", "Poğaça"],
+      "id": 14,
+      "question": "Lahmacun hamuru nasıl yapılır?",
+      "expected_recipes": ["Lahmacun", "Lahmacun Hamuru"],
+      "gold_answer": "Lahmacun hamuru: 500 gr un, 1 paket maya, 1 çay kaşığı tuz, ılık su ile yumuşak hamur yoğrulur. 30 dakika mayalanmaya bırakılır. Küçük bezeler yapılır, çok ince açılır. Kıymalı harç sürülür. Çok sıcak fırında 3-4 dakika pişirilir.",
+      "keywords": ["lahmacun", "hamur", "maya", "un", "kıyma", "ince", "fırın"],
       "category": "direkt",
       "difficulty": "orta"
     },
     {
+      "id": 15,
+      "question": "Kış günü içimi ısıtacak bir çorba",
+      "expected_recipes": ["Mercimek Çorbası", "Tarhana Çorbası", "Ezogelin Çorbası", "Kemik Suyu"],
+      "gold_answer": "Kış çorbaları: Mercimek çorbası en klasik seçenektir, besleyici ve doyurucudur. Tarhana çorbası fermente edilmiş tarhana ile yapılır, ekşimsi lezzeti vardır. Ezogelin çorbası mercimek, bulgur ve baharatla hazırlanır. Kemik suyu bağışıklık güçlendirir.",
+      "keywords": ["çorba", "mercimek", "tarhana", "ezogelin", "kış", "sıcak", "kemik suyu"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 16,
+      "question": "Mantı tarifi istiyorum",
+      "expected_recipes": ["Mantı", "Kayseri Mantısı", "Türk Mantısı"],
+      "gold_answer": "Mantı tarifi: Hamur un, su, yumurta ve tuzla yoğrulur. İnce açılır, küçük kareler kesilir. Her kareye az kıyma konur, üçgen şeklinde kapatılır. Kaynar tuzlu suda haşlanır. Sarımsaklı yoğurt ve tereyağlı kırmızı biber sosu ile servis edilir.",
+      "keywords": ["mantı", "hamur", "kıyma", "yoğurt", "tereyağı", "kırmızı biber", "Kayseri"],
+      "category": "direkt",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 17,
+      "question": "Islak kek tarifi",
+      "expected_recipes": ["Islak Kek", "Çikolatalı Islak Kek", "Browni"],
+      "gold_answer": "Islak kek tarifi: Yumurta ve şeker çırpılır, un, kakao, kabartma tozu eklenir. Sıvı yağ ve süt ilave edilir. 170 derecede pişirilir. Çikolatalı sos için süt, şeker ve kakao kaynatılır. Sıcak kek üzerine sos dökülür, soğumaya bırakılır.",
+      "keywords": ["ıslak kek", "çikolata", "kakao", "sos", "kek", "browni", "tatlı"],
+      "category": "direkt",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 18,
+      "question": "Et yemeyen biri için doyurucu bir ana yemek",
+      "expected_recipes": ["Kuru Fasulye", "Mercimek Köftesi", "Nohut Yemeği", "Mücver", "Ispanaklı Börek"],
+      "gold_answer": "Vejetaryen ana yemekler: Kuru fasulye pilav yanında çok doyurucudur. Mercimek köftesi protein kaynağıdır, bulgur ve mercimekle yapılır. Nohut yemeği domates soslu hazırlanır. Mücver kabak ile yapılır. Ispanaklı börek hem lezzetli hem besleyicidir.",
+      "keywords": ["vejetaryen", "kuru fasulye", "mercimek köftesi", "nohut", "mücver", "börek", "etsiz"],
+      "category": "kısıtlamalı",
+      "difficulty": "orta"
+    },
+    {
+      "id": 19,
+      "question": "Ramazan için iftar menüsü önerisi",
+      "expected_recipes": ["Çorba", "Pide", "Hurma", "Pilav", "Güllaç"],
+      "gold_answer": "İftar menüsü: Hurma ve su ile oruç açılır. Ardından mercimek veya tarhana çorbası içilir. Ana yemek olarak etli pilav veya güveç tercih edilir. Ramazan pidesi yanında olmalı. Tatlı olarak güllaç veya sütlaç servis edilir.",
+      "keywords": ["iftar", "ramazan", "hurma", "çorba", "pide", "pilav", "güllaç", "oruç"],
+      "category": "durum_bazlı",
+      "difficulty": "zor"
+    },
+    {
       "id": 20,
-      "question": "Tavuk göğsünü değişik bir şekilde pişirmek istiyorum, hep aynı şeyleri yapıyorum",
-      "expected_recipes": ["Tavuk Şiş", "Tavuk Sote", "Kremalı Tavuk", "Tandır Tavuk", "Tavuk Sarma"],
+      "question": "Patlıcan var, kıyma var, etkileyici bir şey",
+      "expected_recipes": ["Karnıyarık", "Patlıcan Musakka", "Ali Nazik", "Hünkar Beğendi"],
+      "gold_answer": "Patlıcan ve kıyma ile tarifler: Karnıyarık patlıcan kızartılıp kıyma ile doldurulur. Musakka dilimlenmiş patlıcan ve kıyma katmanlarıyla yapılır. Ali Nazik közlenmiş patlıcan püresi üzerine yoğurtlu kıyma. Hünkar beğendi patlıcan ezmesi üzerine kavurma.",
+      "keywords": ["patlıcan", "kıyma", "karnıyarık", "musakka", "ali nazik", "hünkar beğendi"],
       "category": "malzeme_bazlı",
       "difficulty": "orta"
     },
     {
       "id": 21,
-      "question": "Dondurucudan çıkardığım kıymayı en hızlı ne yapabilirim akşam yemeğine?",
-      "expected_recipes": ["Köfte", "Kıymalı Makarna", "Lahmacun", "Kıymalı Pide", "Kıymalı Börek"],
-      "category": "malzeme_bazlı",
-      "difficulty": "orta"
+      "question": "Şekerpare nasıl yapılır?",
+      "expected_recipes": ["Şekerpare", "İrmikli Şekerpare"],
+      "gold_answer": "Şekerpare tarifi: Un, irmik, yumurta, şeker ve tereyağı ile hamur yapılır. Ceviz büyüklüğünde toplar yapılır, üstüne badem konur. 170 derecede pişirilir. Şerbet kaynatılır (su, şeker, limon). Sıcak tatlı üzerine soğuk şerbet dökülür.",
+      "keywords": ["şekerpare", "irmik", "şerbet", "badem", "un", "tereyağı", "tatlı"],
+      "category": "direkt",
+      "difficulty": "kolay"
     },
     {
       "id": 22,
-      "question": "Cumartesi sabahı geç kalkmış kahvaltı için enfes bir brunch menüsü",
-      "expected_recipes": ["Menemen", "Sucuklu Yumurta", "Omlet", "Gözleme", "French Toast"],
-      "category": "durum_bazlı",
+      "question": "Kahvaltılık tarifler öner",
+      "expected_recipes": ["Menemen", "Simit", "Poğaça", "Börek", "Omlet", "Gözleme"],
+      "gold_answer": "Kahvaltılık tarifler: Menemen domates ve yumurta ile yapılır. Simit susamlı ve gevrek olur. Peynirli poğaça hamur işidir. Su böreği yufka ile hazırlanır. Omlet çeşitli malzemelerle zenginleştirilebilir. Gözleme ince hamurla yapılır.",
+      "keywords": ["kahvaltı", "menemen", "simit", "poğaça", "börek", "omlet", "gözleme"],
+      "category": "karşılaştırmalı",
       "difficulty": "orta"
     },
     {
       "id": 23,
-      "question": "Aşırı yorgunum, 15 dakikada hazır olacak besleyici bir şey",
-      "expected_recipes": ["Omlet", "Makarna", "Tost", "Yumurtalı Ekmek", "Salata"],
-      "category": "durum_bazlı",
+      "question": "Kolay bir tatlı tarifi ver",
+      "expected_recipes": ["Puding", "Sütlaç", "Muhallebi", "Magnolia", "Trileçe"],
+      "gold_answer": "Kolay tatlılar: Sütlaç pirinç, süt ve şekerle yapılır, fırında üstü kızartılır. Puding hazır paket ile pratikçe hazırlanır. Muhallebi un, süt ve şekerle pişirilir. Magnolia bisküvi, muz ve kremalı tatlıdır. Trileçe üç sütle ıslatılmış kek.",
+      "keywords": ["kolay", "tatlı", "sütlaç", "puding", "muhallebi", "magnolia", "trileçe", "pratik"],
+      "category": "direkt",
       "difficulty": "kolay"
     },
     {
       "id": 24,
-      "question": "Bebek 6 aylık oldu, ilk ek gıda için evde ne hazırlayabilirim?",
-      "expected_recipes": ["Sebze Püresi", "Meyve Püresi", "Patates Püresi", "Havuç Püresi"],
-      "category": "kısıtlamalı",
-      "difficulty": "kolay"
-    },
-    {
-      "id": 25,
-      "question": "Kapıda beklemeyen, önceden hazırlanabilecek bir parti yemeği",
-      "expected_recipes": ["Kısır", "Börek", "Poğaça", "Zeytinyağlı", "Pilaki"],
-      "category": "durum_bazlı",
+      "question": "Patates ile yapılabilecek yemekler",
+      "expected_recipes": ["Patates Kızartması", "Fırında Patates", "Patates Püresi", "Patates Salatası", "Patatesli Köfte"],
+      "gold_answer": "Patates yemekleri: Patates kızartması en klasik olanıdır. Fırında patates zeytinyağı ve baharatla pişirilir. Patates püresi süt ve tereyağı ile ezilir. Patates salatası mayonez veya zeytinyağlı yapılır. Patatesli köfte haşlanmış patates ve bulgurla hazırlanır.",
+      "keywords": ["patates", "kızartma", "fırında", "püre", "salata", "köfte"],
+      "category": "malzeme_bazlı",
       "difficulty": "orta"
     },
     {
-      "id": 26,
-      "question": "Ege mutfağından zeytinyağlı bir ot yemeği yapmak istiyorum",
-      "expected_recipes": ["Zeytinyağlı Pırasa", "Zeytinyağlı Semizotu", "Zeytinyağlı Ispanak", "Zeytinyağlı Enginar"],
+      "id": 25,
+      "question": "Döner nasıl yapılır evde?",
+      "expected_recipes": ["Döner", "Ev Yapımı Döner", "Tavuk Döner"],
+      "gold_answer": "Ev yapımı döner: Et ince dilimler halinde kesilir. Yoğurt, zeytinyağı, soğan suyu, tuz ve baharatlarla marine edilir. Et dilimleri üst üste dizilir, fırın tepsisine konur. 200 derecede pişirilir, ara ara döndürülür. Lavaş veya ekmek arası servis edilir.",
+      "keywords": ["döner", "et", "marine", "fırın", "tavuk", "lavaş", "ev yapımı"],
       "category": "direkt",
+      "difficulty": "zor"
+    },
+    {
+      "id": 26,
+      "question": "Çocuklar için eğlenceli yemek tarifleri",
+      "expected_recipes": ["Pizza", "Makarna", "Köfte", "Nugget", "Patates Kızartması"],
+      "gold_answer": "Çocuk yemekleri: Mini pizza hamuru açılır, domates sosu sürülür, peynir ve sevdikleri malzemeler eklenir. Renkli makarna eğlencelidir. Köfte şekilli yapılabilir. Ev yapımı nugget tavuk göğsünden hazırlanır. Patates kızartması çocukların favorisidir.",
+      "keywords": ["çocuk", "pizza", "makarna", "köfte", "nugget", "patates", "eğlenceli"],
+      "category": "kısıtlamalı",
       "difficulty": "orta"
     },
     {
       "id": 27,
-      "question": "Antep mutfağından acılı ve lezzetli bir kebap tarifi",
-      "expected_recipes": ["Adana Kebap", "Lahmacun", "Ali Nazik", "Beyran", "Yuvalama"],
+      "question": "Güveç tarifi ver",
+      "expected_recipes": ["Et Güveç", "Sebzeli Güveç", "Tavuk Güveç", "Kuzu Güveç"],
+      "gold_answer": "Güveç tarifi: Et küçük parçalara ayrılır. Soğan, biber, domates, patates ve patlıcan doğranır. Tüm malzemeler güveç kabına dizilir. Zeytinyağı, tuz, karabiber eklenir. Kapağı kapatılır. 180 derecede 1.5-2 saat pişirilir. Kendi suyunda ağır pişer.",
+      "keywords": ["güveç", "et", "sebze", "fırın", "tavuk", "kuzu", "yavaş pişirme"],
       "category": "direkt",
-      "difficulty": "zor"
+      "difficulty": "orta"
     },
     {
       "id": 28,
-      "question": "Çocuğumun doğum günü için evde pasta yapmak istiyorum, kremalı olsun",
-      "expected_recipes": ["Yaş Pasta", "Çikolatalı Pasta", "Muzlu Pasta", "Doğum Günü Pastası"],
+      "question": "Yaz için serinletici içecek tarifleri",
+      "expected_recipes": ["Ayran", "Limonata", "Şalgam", "Şerbet", "Buzlu Çay"],
+      "gold_answer": "Yaz içecekleri: Ayran yoğurt ve su ile çırpılır, tuz eklenir. Limonata taze limon suyu, şeker ve su ile yapılır. Şerbet çeşitli meyvelerle hazırlanır. Şalgam fermente şalgam suyudur. Buzlu çay demlenmiş çay soğutularak servis edilir.",
+      "keywords": ["içecek", "ayran", "limonata", "şalgam", "şerbet", "yaz", "serinletici", "buzlu"],
       "category": "durum_bazlı",
-      "difficulty": "zor"
+      "difficulty": "orta"
     },
     {
       "id": 29,
-      "question": "Karnabaharı hiç sevmem ama sağlıklı olduğu için denemek istiyorum",
-      "expected_recipes": ["Karnabahar Kızartması", "Karnabahar Graten", "Karnabahar Çorbası", "Karnabahar Mücveri"],
-      "category": "malzeme_bazlı",
+      "question": "Künefe tarifi",
+      "expected_recipes": ["Künefe", "Antep Künefesi", "Tel Kadayıf Künefe"],
+      "gold_answer": "Künefe tarifi: Tel kadayıf ince kıyılır, tereyağı ile karıştırılır. Yarısı kalıba serilir, üzerine tuzsuz lor peyniri konur. Kalan kadayıf üste eklenir. Kısık ateşte alt ve üst kızartılır. Şeker şerbeti hazırlanır, sıcak künefe üzerine dökülür. Antep fıstığı ile süslenir.",
+      "keywords": ["künefe", "kadayıf", "peynir", "şerbet", "tereyağı", "fıstık", "Antep"],
+      "category": "direkt",
       "difficulty": "orta"
     },
     {
       "id": 30,
-      "question": "Yurt dışında yaşıyorum, özlediğim Türk kahvaltısı için sucuk yok, alternatif?",
-      "expected_recipes": ["Pastırmalı Yumurta", "Kavurmalı Yumurta", "Menemen", "Sahanda Yumurta"],
-      "category": "kısıtlamalı",
-      "difficulty": "orta"
+      "question": "Salata çeşitleri öner",
+      "expected_recipes": ["Çoban Salata", "Mevsim Salata", "Sezar Salata", "Patates Salatası", "Rus Salatası"],
+      "gold_answer": "Salata çeşitleri: Çoban salata domates, salatalık, biber ve soğanla yapılır. Mevsim salata yeşillikler ve çeşitli sebzelerle hazırlanır. Sezar salata marul, kruton ve parmesan ile servis edilir. Patates salatası haşlanmış patates ile yapılır. Rus salatası mayonezli ve turşulu.",
+      "keywords": ["salata", "çoban", "mevsim", "sezar", "patates", "rus", "sebze", "yeşillik"],
+      "category": "karşılaştırmalı",
+      "difficulty": "kolay"
     },
     {
       "id": 31,
-      "question": "Mide rahatsızlığım var, hafif ve sindirimi kolay bir akşam yemeği",
-      "expected_recipes": ["Pirinç Çorbası", "Tavuk Suyu Çorbası", "Haşlama", "Zeytinyağlı Taze Fasulye"],
-      "category": "kısıtlamalı",
+      "question": "Balık nasıl pişirilir en güzel?",
+      "expected_recipes": ["Izgara Balık", "Fırında Balık", "Buğulama", "Balık Tava"],
+      "gold_answer": "Balık pişirme yöntemleri: Izgara balık en sağlıklı yöntemdir, limon ve zeytinyağı ile servis edilir. Fırında balık sebzeler üzerinde pişirilir. Buğulama az suda buharda pişirmedir. Tava balık unlanıp kızartılır. Taze balık tercih edilmeli, fazla pişirilmemelidir.",
+      "keywords": ["balık", "ızgara", "fırın", "buğulama", "tava", "limon", "zeytinyağı"],
+      "category": "direkt",
       "difficulty": "orta"
     },
     {
       "id": 32,
-      "question": "Rus salatasını çok severim, evde nasıl yaparım bilmiyorum",
-      "expected_recipes": ["Rus Salatası", "Amerikan Salatası", "Patates Salatası"],
+      "question": "Ev yapımı ekmek tarifi",
+      "expected_recipes": ["Ekmek", "Köy Ekmeği", "Somun Ekmek", "Pide Ekmeği"],
+      "gold_answer": "Ev yapımı ekmek: 500 gr un, 1 paket kuru maya, 1 tatlı kaşığı tuz, 300 ml ılık su ile hamur yoğrulur. 1 saat mayalanır. Şekil verilir, üzeri çizilir. 220 derecede 25-30 dakika pişirilir. Fırına su kabı konursa kabuk gevrek olur.",
+      "keywords": ["ekmek", "hamur", "maya", "un", "fırın", "ev yapımı", "köy ekmeği"],
       "category": "direkt",
-      "difficulty": "kolay"
+      "difficulty": "orta"
     },
     {
       "id": 33,
-      "question": "Kalan pilavı değerlendirebileceğim farklı bir tarif var mı?",
-      "expected_recipes": ["Pilavlı Köfte", "Pilav Üstü Döner", "Pilav Üstü Kuru", "Arancini", "Pilav Salatası"],
-      "category": "malzeme_bazlı",
+      "question": "Piknik için taşınabilir yemekler",
+      "expected_recipes": ["Poğaça", "Börek", "Sandviç", "Kuru Köfte", "Çiğ Köfte"],
+      "gold_answer": "Piknik yemekleri: Poğaça soğuk da lezzetlidir. Börek kolay taşınır. Sandviçler önceden hazırlanır. Kuru köfte soğuk yenir, bozulmaz. Çiğ köfte pratik atıştırmalıktır. Ayrıca meyve, kuru yemiş ve su unutulmamalı.",
+      "keywords": ["piknik", "poğaça", "börek", "sandviç", "köfte", "çiğ köfte", "taşınabilir", "soğuk"],
+      "category": "durum_bazlı",
       "difficulty": "orta"
     },
     {
       "id": 34,
-      "question": "Pikniğe gidiyoruz, taşıması kolay ve bozulmayacak yemekler",
-      "expected_recipes": ["Poğaça", "Börek", "Kısır", "Sandviç", "Simit"],
-      "category": "durum_bazlı",
+      "question": "Bulgur ile ne yapılır?",
+      "expected_recipes": ["Bulgur Pilavı", "Kısır", "Çiğ Köfte", "Bulgurlu Köfte", "Fellah Köftesi"],
+      "gold_answer": "Bulgur yemekleri: Bulgur pilavı domatesli veya sade yapılır. Kısır ince bulgur, domates salçası ve yeşilliklerle hazırlanır. Çiğ köfte bulgur ve baharatla yoğrulur. Bulgurlu köfte kıyma ve bulgurla yapılır. Fellah köftesi küçük yuvarlak şekilli bulgur köftesidir.",
+      "keywords": ["bulgur", "pilav", "kısır", "çiğ köfte", "köfte", "fellah"],
+      "category": "malzeme_bazlı",
       "difficulty": "orta"
     },
     {
       "id": 35,
-      "question": "Şerbetli tatlı yapmaktan korkuyorum, ilk kez deneyeceğim kolay bir tarif",
-      "expected_recipes": ["Revani", "Şambali", "Kemalpaşa", "Şekerpare"],
-      "category": "durum_bazlı",
+      "question": "Sütlü tatlılar hangileri?",
+      "expected_recipes": ["Sütlaç", "Kazandibi", "Keşkül", "Muhallebi", "Tavuk Göğsü"],
+      "gold_answer": "Sütlü tatlılar: Sütlaç pirinç ve sütle pişirilir. Kazandibi alt kısmı karamelize edilmiş muhallebidir. Keşkül badem ezmeli sütlü tatlıdır. Muhallebi un veya nişasta ile koyulaştırılır. Tavuk göğsü tatlısı gerçek tavuk lifleriyle yapılır.",
+      "keywords": ["sütlü", "tatlı", "sütlaç", "kazandibi", "keşkül", "muhallebi", "tavuk göğsü"],
+      "category": "karşılaştırmalı",
       "difficulty": "orta"
     },
     {
       "id": 36,
-      "question": "Tavada balık kızartmak istiyorum ama hep dağılıyor, püf noktası nedir?",
-      "expected_recipes": ["Tavada Balık", "Balık Kızartma", "Hamsi Tava", "Çipura Tava"],
-      "category": "direkt",
+      "question": "Kuzu eti ile yapılan yemekler",
+      "expected_recipes": ["Kuzu Tandır", "Kuzu Güveç", "Kuzu Pirzola", "İncik", "Kuzu Çevirme"],
+      "gold_answer": "Kuzu eti yemekleri: Kuzu tandır bütün kuzu fırında uzun süre pişirilir. Güveç sebzelerle birlikte hazırlanır. Pirzola ızgarada veya tavada yapılır. İncik kemikli but kısmıdır, yavaş pişirilir. Çevirme şişte çevrilerek pişirilir.",
+      "keywords": ["kuzu", "tandır", "güveç", "pirzola", "incik", "çevirme", "et"],
+      "category": "malzeme_bazlı",
       "difficulty": "orta"
     },
     {
       "id": 37,
-      "question": "Laktozsuz besleniyorum, süt ve krema olmadan yapabileceğim bir makarna sosu",
-      "expected_recipes": ["Domates Soslu Makarna", "Pesto Makarna", "Zeytinyağlı Makarna", "Aglio e Olio"],
-      "category": "kısıtlamalı",
+      "question": "Hamur işi tarifleri",
+      "expected_recipes": ["Börek", "Pide", "Gözleme", "Poğaça", "Simit", "Lahmacun"],
+      "gold_answer": "Hamur işleri: Börek yufka ile peynir veya kıymalı yapılır. Pide uzun şekilli hamur üzerine çeşitli malzemelerle hazırlanır. Gözleme ince açılmış hamur içi doldurulup tavada pişirilir. Poğaça yumuşak hamurdan küçük parçalar. Simit susamlı halka şeklinde. Lahmacun kıymalı ince hamur.",
+      "keywords": ["hamur", "börek", "pide", "gözleme", "poğaça", "simit", "lahmacun"],
+      "category": "karşılaştırmalı",
       "difficulty": "orta"
     },
     {
       "id": 38,
-      "question": "Kış için turşu kurmak istiyorum, en klasik tarif hangisi?",
-      "expected_recipes": ["Lahana Turşusu", "Karışık Turşu", "Kornişon Turşusu", "Biber Turşusu"],
+      "question": "Turşu nasıl kurulur?",
+      "expected_recipes": ["Turşu", "Lahana Turşusu", "Karışık Turşu", "Kornişon Turşu"],
+      "gold_answer": "Turşu kurma: Sebzeler (salatalık, biber, lahana vb.) yıkanır, kavanoza yerleştirilir. Salamura hazırlanır: 1 litre suya 2 yemek kaşığı kaya tuzu, 1 çay bardağı sirke. Sebzelerin üzerini kapatacak şekilde dökülür. Ağzı kapatılır, 2-3 hafta beklenir.",
+      "keywords": ["turşu", "salamura", "sirke", "tuz", "lahana", "salatalık", "kavanoz"],
       "category": "direkt",
       "difficulty": "orta"
     },
     {
       "id": 39,
-      "question": "Ev yapımı lahmacun denemek istiyorum ama fırınım küçük",
-      "expected_recipes": ["Lahmacun", "Tavada Lahmacun", "Mini Lahmacun", "Lahmacun Tarifi"],
-      "category": "direkt",
-      "difficulty": "zor"
+      "question": "Anne yemeği gibi ev yemekleri",
+      "expected_recipes": ["Kuru Fasulye", "Mercimek Çorbası", "Etli Nohut", "Bamya", "Taze Fasulye"],
+      "gold_answer": "Geleneksel ev yemekleri: Kuru fasulye pilav yanında klasiktir, et veya pastırma ile pişirilir. Mercimek çorbası her evde yapılır. Etli nohut domates soslu hazırlanır. Bamya zeytinyağlı veya etli olur. Taze fasulye domatesli pişirilir.",
+      "keywords": ["ev yemeği", "anne", "kuru fasulye", "mercimek", "nohut", "bamya", "taze fasulye", "geleneksel"],
+      "category": "durum_bazlı",
+      "difficulty": "orta"
     },
     {
       "id": 40,
-      "question": "Kuzu eti aldım ama ne yapacağımı bilmiyorum, önerin?",
-      "expected_recipes": ["Kuzu Tandır", "Kuzu İncik", "Kuzu Haşlama", "Kuzu Kavurma", "Fırında Kuzu"],
+      "question": "Tavada hızlı yapılan yemekler",
+      "expected_recipes": ["Omlet", "Menemen", "Tavuk Sote", "Kavurma", "Sebze Kızartma"],
+      "gold_answer": "Hızlı tava yemekleri: Omlet 5 dakikada hazırlanır, yumurta çırpılıp tavada pişirilir. Menemen domates ve yumurta ile yapılır. Tavuk sote küp tavuk ve sebzelerle kavrulur. Kavurma et parçaları kendi yağında pişirilir. Sebze sote çeşitli sebzelerle hazırlanır.",
+      "keywords": ["tava", "hızlı", "omlet", "menemen", "sote", "kavurma", "pratik"],
+      "category": "durum_bazlı",
+      "difficulty": "kolay"
+    },
+    {
+      "id": 41,
+      "question": "Nohut ile yapılan yemekler",
+      "expected_recipes": ["Nohut Yemeği", "Etli Nohut", "Humus", "Nohutlu Pilav"],
+      "gold_answer": "Nohut yemekleri: Etli nohut domates salçası ve et ile pişirilir. Humus haşlanmış nohut, tahin, limon ve sarımsakla ezilir. Nohutlu pilav pirinç pilavına haşlanmış nohut eklenir. Nohut salatası zeytinyağlı servis edilir.",
+      "keywords": ["nohut", "etli", "humus", "pilav", "salata", "tahin"],
       "category": "malzeme_bazlı",
       "difficulty": "orta"
     },
     {
-      "id": 41,
-      "question": "Anneannemin yaptığı gibi tel tel ayrılan pilav nasıl yapılır?",
-      "expected_recipes": ["Pirinç Pilavı", "Tereyağlı Pilav", "Pilav", "Nohutlu Pilav"],
-      "category": "direkt",
-      "difficulty": "kolay"
-    },
-    {
       "id": 42,
-      "question": "Ev yapımı yoğurt mayalayacağım, ilk kez deneyeceğim",
-      "expected_recipes": ["Ev Yoğurdu", "Yoğurt Yapımı", "Süzme Yoğurt"],
-      "category": "direkt",
-      "difficulty": "kolay"
-    },
-    {
-      "id": 43,
-      "question": "Karadeniz mutfağından mısır unu ile yapılan bir şey",
-      "expected_recipes": ["Mısır Ekmeği", "Kuymak", "Muhlama", "Hamsiköy Sütlacı"],
-      "category": "direkt",
+      "question": "Fırında sebze yemekleri",
+      "expected_recipes": ["Fırında Sebze", "Türlü", "Fırında Patates", "Fırında Karnabahar"],
+      "gold_answer": "Fırında sebzeler: Türlü patlıcan, kabak, biber, domates ve patates ile yapılır. Fırında patates dilimlenip baharatlanır. Karnabahar beşamel sos ve peynirle gratine edilir. Sebzeler zeytinyağı, tuz ve kekikle marine edilip fırınlanır.",
+      "keywords": ["fırın", "sebze", "türlü", "patates", "karnabahar", "zeytinyağı"],
+      "category": "karşılaştırmalı",
       "difficulty": "orta"
     },
     {
-      "id": 44,
-      "question": "Osmanlı saray mutfağından gösterişli bir yemek yapmak istiyorum",
-      "expected_recipes": ["Hünkar Beğendi", "Sultan Kebabı", "Saray Lokumu", "İmam Bayıldı", "Padişah Pilavı"],
+      "id": 43,
+      "question": "Doğum günü pastası tarifi",
+      "expected_recipes": ["Yaş Pasta", "Çikolatalı Pasta", "Muzlu Pasta", "Kakaolu Pasta"],
+      "gold_answer": "Doğum günü pastası: Pandispanya için yumurta ve şeker çırpılır, un ve kabartma tozu eklenir. 180 derecede pişirilir. Krema için çırpılmış krema veya ganaj hazırlanır. Katlar arasına krema sürülür. Üstü meyve, çikolata veya şekerle süslenir.",
+      "keywords": ["pasta", "doğum günü", "pandispanya", "krema", "çikolata", "muz", "süsleme"],
       "category": "direkt",
       "difficulty": "zor"
     },
     {
+      "id": 44,
+      "question": "Ceviz ile yapılan tatlılar",
+      "expected_recipes": ["Baklava", "Cevizli Rulo", "Cevizli Kurabiye", "Aşure"],
+      "gold_answer": "Cevizli tatlılar: Baklava yufka aralarına ceviz içi serilir, şerbetlenir. Cevizli rulo bisküvi ve cevizle yapılır. Cevizli kurabiye hamura kıyılmış ceviz eklenir. Aşure tahıl, kuru meyve ve cevizle hazırlanır. Ceviz ayrıca sütlaç ve muhallebi üzerine serpilir.",
+      "keywords": ["ceviz", "baklava", "rulo", "kurabiye", "aşure", "tatlı"],
+      "category": "malzeme_bazlı",
+      "difficulty": "orta"
+    },
+    {
       "id": 45,
-      "question": "Protein tozu falan olmadan, spor sonrası için doğal proteinli atıştırmalık",
-      "expected_recipes": ["Yumurta", "Lor Peyniri", "Yoğurt", "Fıstık Ezmesi", "Humus"],
-      "category": "kısıtlamalı",
+      "question": "Makarna çeşitleri ve sosları",
+      "expected_recipes": ["Bolonez Makarna", "Fettucine Alfredo", "Domatesli Makarna", "Kremalı Makarna"],
+      "gold_answer": "Makarna ve soslar: Bolonez kıymalı domates sosudur. Alfredo krema, tereyağı ve parmesan ile hazırlanır. Domatesli sos sarımsak, domates ve fesleğenle yapılır. Kremalı makarna krema ve mantar ile zenginleştirilir. Makarna al dente pişirilmelidir.",
+      "keywords": ["makarna", "sos", "bolonez", "alfredo", "domates", "krema", "kıyma"],
+      "category": "karşılaştırmalı",
       "difficulty": "orta"
     },
     {
       "id": 46,
-      "question": "Kaşarlı, kıymalı, nefis bir pide yapmak istiyorum evde",
-      "expected_recipes": ["Kıymalı Pide", "Kaşarlı Pide", "Karışık Pide", "Kuşbaşılı Pide"],
+      "question": "Közlenmiş sebze tarifleri",
+      "expected_recipes": ["Közlenmiş Patlıcan", "Közlenmiş Biber", "Babaganuş", "Acılı Ezme"],
+      "gold_answer": "Közlenmiş sebzeler: Patlıcan ve biber doğrudan ateşte veya ocakta közlenir. Kabukları soyulur, eti ayrılır. Babaganuş için patlıcan tahin, sarımsak ve limonla ezilir. Acılı ezme için biber domates ve baharatlarla karıştırılır. Zeytinyağı ile servis edilir.",
+      "keywords": ["közlenmiş", "patlıcan", "biber", "babaganuş", "ezme", "tahin"],
       "category": "direkt",
       "difficulty": "orta"
     },
     {
       "id": 47,
-      "question": "Kabak dolması içi için en lezzetli pirinçli harç tarifi",
-      "expected_recipes": ["Kabak Dolması", "Dolma", "Zeytinyağlı Kabak Dolması", "Etli Kabak Dolması"],
-      "category": "direkt",
+      "question": "Öğrenci bütçesine uygun yemekler",
+      "expected_recipes": ["Makarna", "Yumurta", "Mercimek Çorbası", "Tost", "Pilav"],
+      "gold_answer": "Ekonomik öğrenci yemekleri: Makarna ucuz ve doyurucudur, çeşitli soslarla yapılır. Yumurta protein kaynağıdır, çok yönlüdür. Mercimek çorbası besleyici ve ekonomiktir. Tost pratik öğündür. Pilav yanında yumurta veya konserve ile servis edilir.",
+      "keywords": ["ekonomik", "öğrenci", "makarna", "yumurta", "mercimek", "tost", "pilav", "ucuz", "bütçe"],
+      "category": "kısıtlamalı",
       "difficulty": "orta"
     },
     {
       "id": 48,
-      "question": "Sıcak yaz günü için evde limonata veya soğuk içecek tarifleri",
-      "expected_recipes": ["Limonata", "Ayran", "Şalgam", "Boza", "Şerbet"],
-      "category": "direkt",
-      "difficulty": "kolay"
+      "question": "Bayram tatlıları nelerdir?",
+      "expected_recipes": ["Baklava", "Şekerpare", "Revani", "Lokma", "Kadayıf"],
+      "gold_answer": "Bayram tatlıları: Baklava en geleneksel bayram tatlısıdır. Şekerpare irmikli ve şerbetli küçük tatlılardır. Revani irmikli kek şerbetlenerek yapılır. Lokma yağda kızartılıp şerbete batırılır. Kadayıf tel kadayıf veya ekmek kadayıfı olarak hazırlanır.",
+      "keywords": ["bayram", "baklava", "şekerpare", "revani", "lokma", "kadayıf", "şerbet", "tatlı"],
+      "category": "karşılaştırmalı",
+      "difficulty": "orta"
     },
     {
       "id": 49,
-      "question": "Gece yarısı canım çok tatlı çekti, buzdolabındakilerle hızlı bir tatlı",
-      "expected_recipes": ["Muhallebi", "Sütlaç", "Puding", "Magnolia", "Supangle"],
-      "category": "durum_bazlı",
-      "difficulty": "kolay"
+      "question": "Glütensiz yemek tarifleri",
+      "expected_recipes": ["Pilav", "Et Yemekleri", "Salata", "Sebze Yemekleri"],
+      "gold_answer": "Glütensiz tarifler: Pirinç pilavı doğal olarak glütensizdir. Et ve tavuk yemekleri unlanmadan yapılırsa uygundur. Salatalar güvenlidir. Sebze yemekleri zeytinyağlı olarak hazırlanır. Mısır unu veya pirinç unu alternatif olarak kullanılabilir.",
+      "keywords": ["glütensiz", "pilav", "et", "salata", "sebze", "pirinç", "mısır unu"],
+      "category": "kısıtlamalı",
+      "difficulty": "zor"
     },
     {
       "id": 50,
       "question": "Hatay usulü künefe yapmak istiyorum ama tel kadayıf bulamıyorum",
       "expected_recipes": ["Künefe", "Ekmek Kadayıfı", "Kadayıf Tatlısı", "Kadayıf Dolması"],
+      "gold_answer": "Tel kadayıf alternatifi: Ekmek kadayıfı ile benzer lezzet elde edilebilir. Bayat ekmek ince doğranıp kurutulabilir. Yufka ince kesilerek alternatif olabilir. Kadayıf dolması peynirli veya cevizli yapılır. Hazır kadayıf marketlerde donmuş olarak bulunabilir.",
+      "keywords": ["künefe", "kadayıf", "ekmek kadayıfı", "alternatif", "Hatay", "peynir"],
       "category": "kısıtlamalı",
       "difficulty": "zor"
     },
-    
     {
       "id": 51,
       "question": "Dondurmalı karnıyarık tarifi var mı?",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Var olmayan saçma kombinasyon - sistem bulunamadı demeli"
@@ -371,6 +472,8 @@
       "id": 52,
       "question": "Çikolatalı mercimek çorbası nasıl yapılır?",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Var olmayan saçma kombinasyon"
@@ -379,6 +482,8 @@
       "id": 53,
       "question": "Wasabi soslu mantı tarifi istiyorum",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Türk mutfağında olmayan fusion"
@@ -387,6 +492,8 @@
       "id": 54,
       "question": "Mayonezli baklava nasıl yapılır?",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Absürt kombinasyon"
@@ -395,6 +502,8 @@
       "id": 55,
       "question": "Lahmacunlu cheesecake tarifi",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Mantıksız tatlı-tuzlu karışımı"
@@ -403,6 +512,8 @@
       "id": 56,
       "question": "Ketçaplı sütlaç yapımı",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "İğrenç kombinasyon"
@@ -411,6 +522,8 @@
       "id": 57,
       "question": "Turşulu tiramisu nasıl yapılır?",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Var olmayan tatlı"
@@ -419,6 +532,8 @@
       "id": 58,
       "question": "Sushi tarifi Türk mutfağından",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Japon yemeği - veritabanında yok"
@@ -427,6 +542,8 @@
       "id": 59,
       "question": "Coca-cola ile yapılan dolma tarifi",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Absürt malzeme kombinasyonu"
@@ -435,6 +552,8 @@
       "id": 60,
       "question": "Dondurma soslu iskender kebap",
       "expected_recipes": [],
+      "gold_answer": "",
+      "keywords": [],
       "category": "impossible",
       "difficulty": "zor",
       "note": "Var olmayan kombinasyon"
