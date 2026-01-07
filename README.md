@@ -312,5 +312,14 @@ GitHub: [@EmircanDemirTR](https://github.com/EmircanDemirTR)
 
 ## 📄 Lisans
 
-MIT License - Detaylar için [LICENSE](LICENSE) dosyasına bakınız.
+Bu proje **MIT License** altında lisanslanmıştır.
+
+| İzinler | Sınırlamalar | Koşullar |
+|---------|--------------|----------|
+| ✅ Ticari kullanım | ❌ Sorumluluk | ℹ️ Lisans ve telif hakkı bildirimi |
+| ✅ Değiştirme | ❌ Garanti | |
+| ✅ Dağıtım | | |
+| ✅ Özel kullanım | | |
+
+Detaylar için [LICENSE](LICENSE) dosyasına bakınız.
 
