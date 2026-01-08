@@ -19,7 +19,7 @@ Türk mutfağına ait ~20.000 tarifi içeren bir **Retrieval-Augmented Generatio
 9. [Final Comparison Table](#9-final-comparison-table)
 10. [Tartışma (Zorunlu 5 Soru)](#10-tartışma-zorunlu-5-soru)
 11. [Hallucination Örnekleri](#11-hallucination-örnekleri)
-12. [Human Evaluation](#12-human-evaluation)
+12. [Human Evaluation](#12-human-evaluation) 
 
 ---
 
