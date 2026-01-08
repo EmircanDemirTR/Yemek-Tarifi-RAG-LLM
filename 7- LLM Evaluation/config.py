@@ -45,3 +45,4 @@ QUICK_TEST_MODELS = ["groq", "qwen2"]
 MAX_QUESTIONS = 10  # Hızlı test için
 FULL_QUESTIONS = 50  # Tam test için (impossible hariç)
 
+
