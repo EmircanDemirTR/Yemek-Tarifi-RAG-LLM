@@ -20,7 +20,6 @@ Türk mutfağına ait ~20.000 tarifi içeren bir **Retrieval-Augmented Generatio
 10. [Tartışma (Zorunlu 5 Soru)](#10-tartışma-zorunlu-5-soru)
 11. [Hallucination Örnekleri](#11-hallucination-örnekleri)
 12. [Human Evaluation](#12-human-evaluation)
-13. [Sonuç](#13-sonuç)
 
 ---
 
@@ -298,76 +297,6 @@ Proje proje/
 
 ---
 
-## 13. Sonuç & Gelecek Çalışmalar
-
-### PDF Beklentileri Karşılandı
-
-| Beklenti | Sonuç | ✓ |
-|----------|-------|---|
-| RAG+LLM > LLM-Only | Her modelde RAG daha iyi | ✅ |
-| LLM-Only yüksek hallucination | %20-%50 | ✅ |
-| RAG ile hallucination azalması | %100'e varan düşüş | ✅ |
-| ≥2 embedding modeli | BGE-M3, E5-Large | ✅ |
-| ≥2 chunking stratejisi | WholeDoc, Parent-Child | ✅ |
-| ≥1 API LLM | OpenAI, Groq | ✅ |
-| ≥4 lokal LLM | Qwen2, Llama3.2, Phi-3, Mistral | ✅ |
-
-### Temel Bulgular
-
-| Metrik | En İyi |
-|--------|--------|
-| Hit Rate@10 | BGE-M3 Parent-Child (60%) |
-| RAG Score | OpenAI GPT-4o-mini (42.99%) |
-| İyileşme | Qwen2 1.5B (+133.1%) |
-| Human Avg | OpenAI RAG (5.00/5.00) |
-
-### Gelecek Çalışmalar
-
-| Özellik | Açıklama |
-|---------|----------|
-| **Re-ranking** | Cross-encoder ile sonuç sıralaması iyileştirme |
-| **Hybrid Search** | Dense + Sparse retrieval kombinasyonu |
-| **Fine-tuning** | Domain-specific embedding model eğitimi |
-| **Web UI** | Gradio/Streamlit ile kullanıcı arayüzü |
-| **Türkçe LLM** | Daha iyi Türkçe destekli lokal model arayışı |
-
----
-
-## 📖 Referanslar
-
-- [BGE-M3](https://huggingface.co/BAAI/bge-m3)
-- [E5-Large](https://huggingface.co/intfloat/multilingual-e5-large)
-- [Qdrant](https://qdrant.tech/)
-- [Ollama](https://ollama.ai)
-
----
-
 ## 👨‍💻 Geliştirici
 
 **Emircan Demir** - [@EmircanDemirTR](https://github.com/EmircanDemirTR)
-
----
-
-## ✅ PDF Uyumluluk Kontrolü
-
-| # | Gereksinim | Durum |
-|---|------------|-------|
-| 1 | ≥50 doküman | ✅ 20,554 tarif |
-| 2 | Veri temizleme | ✅ |
-| 3 | ≥2 chunking stratejisi | ✅ WholeDoc + Parent-Child |
-| 4 | ≥2 embedding modeli | ✅ BGE-M3 + E5-Large |
-| 5 | Vektör DB | ✅ Qdrant (lokal) |
-| 6 | k değeri ayarlanabilir | ✅ k=1,3,5,10 |
-| 7 | Benzerlik metriği | ✅ Cosine |
-| 8 | ≥1 API LLM | ✅ OpenAI + Groq |
-| 9 | ≥4 lokal LLM | ✅ Qwen2, Llama3.2, Phi-3, Mistral |
-| 10 | 30-50 soru eval set | ✅ 60 soru |
-| 11 | Retriever metrikleri | ✅ Recall@k, Hit Rate@k, MRR@k |
-| 12 | LLM metrikleri | ✅ EM, F1, Hallucination, Latency |
-| 13 | Human Evaluation (3 kriter) | ✅ Relevance, Faithfulness, Fluency |
-| 14 | Final Comparison Table (3 satır) | ✅ Section 9 |
-| 15 | 5 zorunlu tartışma sorusu | ✅ Section 10 |
-| 16 | Hallucination örnekleri | ✅ Section 11 |
-| 17 | Gelecek çalışmalar | ✅ Section 13 |
-
-**Sonuç: 17/17 ✅**
